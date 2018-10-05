@@ -1,4 +1,4 @@
-package hello;
+package todo;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
@@ -6,24 +6,13 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-class Todo {
-  public long id;
-  public String text;
-
-  public Todo(String text, long id) {
-    this.text = text;
-    this.id = id;
-  }
-}
-
 @RestController
-public class GreetingController {
+public class TodoController {
 
-  private static final String template = "Hello, %s!";
   private final AtomicLong id = new AtomicLong();
   private ArrayList<Todo> todos = new ArrayList<Todo>();
 
