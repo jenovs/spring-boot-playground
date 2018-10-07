@@ -45,4 +45,14 @@ public class TodoController {
     return todos;
   }
 
+  @DeleteMapping("/todo/{id}")
+  ArrayList<Todo> deleteTodo(@PathVariable long id) {
+    for (Todo todo : todos) {
+      if (todo.getId() == id) {
+        todos.remove(todo);
+      }
+    }
+
+    return todos;
+  }
 }
