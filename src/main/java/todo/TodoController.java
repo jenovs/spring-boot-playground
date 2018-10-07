@@ -28,7 +28,7 @@ public class TodoController {
 
   @PostMapping("/todo")
   ArrayList<Todo> addTodo(@RequestBody String newTodoText) {
-    Todo newTodo = new Todo(newTodoText, id.incrementAndGet());
+    Todo newTodo = new Todo(newTodoText);
 
     todos.add(newTodo);
     return todos;
