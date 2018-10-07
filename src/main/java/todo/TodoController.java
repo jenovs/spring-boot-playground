@@ -33,4 +33,16 @@ public class TodoController {
     todos.add(newTodo);
     return todos;
   }
+
+  @PatchMapping("/todo/{id}")
+  ArrayList<Todo> editTodo(@PathVariable long id) {
+    for (Todo todo : todos) {
+      if (todo.getId() == id) {
+        todo.toggleCompleted();
+      }
+    }
+
+    return todos;
+  }
+
 }
